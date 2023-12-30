@@ -7,7 +7,7 @@ function Navbar() {
     e.preventDefault()
     try {
       const authToken = localStorage.getItem('authToken');
-      const response = await fetch("http://localhost:4000/api/authCheck", {
+      const response = await fetch("https://smart-tech-rho.vercel.app/api/authCheck", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

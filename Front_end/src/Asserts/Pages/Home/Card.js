@@ -45,7 +45,7 @@ const Card = ({ product, changeInterface }) => {
 
   const handelDelete = async () => {
     try {
-      let response = await fetch('http://localhost:4000/api/DeleteProduct', {
+      let response = await fetch('https://smart-tech-rho.vercel.app/api/DeleteProduct', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

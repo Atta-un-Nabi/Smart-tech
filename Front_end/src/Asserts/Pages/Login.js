@@ -12,7 +12,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:4000/api/login", {
+      const response = await fetch("https://smart-tech-rho.vercel.app/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

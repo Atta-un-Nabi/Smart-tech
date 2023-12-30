@@ -23,7 +23,7 @@ const NewCard = (props) => {
     const handleDetailsUpdate = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:4000/api/CreateProduct', {
+            const response = await fetch('https://smart-tech-rho.vercel.app/api/CreateProduct', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
