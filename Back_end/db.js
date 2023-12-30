@@ -1,14 +1,10 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 const UserModel = require('./Models/User');
-
+const conn = process.env.conn;
 const connectToDatabase = async () => {
   try {
-    await mongoose.connect(conn, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      useCreateIndex: true, // This option is to avoid deprecation warnings
-    });
+    await mongoose.connect(conn);
 
     const categories_data = mongoose.connection.db.collection("categories");
     global.catData = await categories_data.find({}).toArray();
