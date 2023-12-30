@@ -3,9 +3,10 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
 const { body, validationResult } = require('express-validator');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs'); // Use bcryptjs instead of bcrypt
 const jwt = require('jsonwebtoken');
 const secretKey = process.env.secretKey;
+
 // Middleware to verify JWT token
 const verifyToken = (req, res, next) => {
     const tokenHeader = req.header('Authorization');
