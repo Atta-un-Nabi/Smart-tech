@@ -1,5 +1,5 @@
 # Smart-tech
- ## ***Title:*** Ecommerce MERN app.
+ ## ***`Title:`*** Ecommerce MERN app.
  ## ***`Functionality:`***
   - Added jwt Tokkens 
   - Added mongoose-senetizer
