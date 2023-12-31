@@ -2,12 +2,12 @@
 
 ## Supported Versions
 
->[!Note] version **4.0.x**
->This is woking only on local host so code will available 
->for learning purpose.. i have been working on it
->since it's time taking process it just a small project and last update is 
->currentely working with fwe vulnerablities. In feb 2024 the commplete version 
->of this site is Available. 
+[!Note] version **4.0.x**
+This is woking only on local host so code will available 
+for learning purpose.. i have been working on it
+since it's time taking process it just a small project and last update is 
+currentely working with fwe vulnerablities. In feb 2024 the commplete version 
+of this site is Available. 
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -19,4 +19,4 @@
 ## Reporting a Vulnerability
 
 
-feel free to contact me on [sardarattaunnabi@gmail.com|address]
+feel free to contact me on [address](sardarattaunnabi@gmail.com|)
