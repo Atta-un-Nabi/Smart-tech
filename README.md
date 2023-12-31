@@ -1,11 +1,11 @@
 # Smart-tech
 The smart-Tech web app 
-- [x] Tip: Ecommerce MERN app.
-- [ ] Functionality:
+> - [x] `**Tip:**` Ecommerce MERN app.
+> - [x] `**Functionality:**`
   - Added jwt Tokkens 
   - Added mongoose-senetizer
   - Added halmet for noSQL injections
   - Login and sign up functionality
   - Dinamic changes in Admin page 
-- [ ] Versions : See [[SECURITY.md]].
-- [ ] progress : Under Working 
+> - [x] `***Versions***` : See SECURITY.md.
+> - [x] `***progress***` : Under Working 
