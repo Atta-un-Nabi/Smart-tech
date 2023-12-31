@@ -1,6 +1,6 @@
 # Smart-tech
 The smart-Tech web app 
-> - [x] `**Tip:**` Ecommerce MERN app.
+> - [x] `**Title:**` Ecommerce MERN app.
 > - [x] `**Functionality:**`
   - Added jwt Tokkens 
   - Added mongoose-senetizer
