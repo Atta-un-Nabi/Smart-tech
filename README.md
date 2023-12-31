@@ -1,5 +1,4 @@
 # Smart-tech
-```md
 > - [x] ***`Title:`*** Ecommerce MERN app.
 > - [x] ***`Functionality:`***
   - Added jwt Tokkens 
@@ -9,4 +8,3 @@
   - Dinamic changes in Admin page 
 > - [x] ***`Versions`*** : See SECURITY.md.
 > - [x] ***`progress`*** : Under Working 
-```
