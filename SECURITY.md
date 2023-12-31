@@ -19,4 +19,4 @@
 ## Reporting a Vulnerability
 
 
-feel free to contact me on `[sardarattaunnabi@gmail.com|address]`
+feel free to contact me on [sardarattaunnabi@gmail.com|address]
