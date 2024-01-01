@@ -6,7 +6,7 @@ const ResetToken = require('../Models/Reset');
 const User = require('../Models/User');
 const bcrypt = require('bcryptjs');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-const A_email = process.env.A_email;
+const A_email = process.env.Email_Address;
 // Function to store reset token in the database
 const saveResetTokenToDB = async (email, token) => {
     try {
