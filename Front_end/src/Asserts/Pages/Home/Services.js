@@ -31,7 +31,7 @@ const Services = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("https://smart-tech-rho.vercel.app/LoadData", {
+      const response = await fetch("https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/LoadData", {
         method: "POST",
         headers: {
           'X-Content-Type-Options': 'nosniff',
