@@ -28,7 +28,7 @@ router.post('/ForgetPass', async (req, res) => {
     try {
         await saveResetTokenToDB(email, resetToken);
 
-        const resetLink = `http://192.168.56.1:3000/reset/${resetToken}`;
+        const resetLink = `https://smart-zi-tech.vercel.app/reset/${resetToken}`;
 
         const msg = {
             to: email,
