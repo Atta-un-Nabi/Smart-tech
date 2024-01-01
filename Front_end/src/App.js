@@ -9,52 +9,62 @@ import Login from './Asserts/Pages/Login';
 import MYFooter from './Asserts/Pages/MYFooter';
 import { Route, Routes } from "react-router-dom";
 import ProductPage from "./Asserts/Pages/ProductPage";
+import { ProductsProvider } from "./Asserts/Pages/Home/ProductContext";
+import Reset from "./Asserts/Pages/ResetPassword";
 
-
-// import Display from "./Asserts/Pages/Home/Display";
 function App() {
   return (
     <>
-      
+
       <Routes>
-        <Route exact path="/" element={<>
-          <Navbar/>
+        <Route exact path="/" element={<ProductsProvider>
+          <Navbar />
           <Categories />
           <HeroSection />
           <Services />
-          {/* <ProductPage /> */}
-          {/* <Display /> */}
-        </>}
+        </ProductsProvider>}
         />
         <Route exact path="/about" element={<>
-          <Navbar/>
+          <Navbar />
           <AboutUs />
         </>}
         />
-
-        <Route exact path="/product" element={<>
-          <Navbar/>
-          <ProductPage />
-        </>}
+        <Route
+          exact
+          path="/product/:category/:id"
+          element={
+            <ProductsProvider>
+              <Navbar />
+              <ProductPage />
+            </ProductsProvider>
+          }
         />
-
-        <Route exact path="/admin" element={<>
-          <Navbar/>
-          <HeroSection />
-          <Admin />
-        </>}
-        />
-
         <Route exact path="/login" element={<>
           <Login />
         </>}
         />
 
         <Route exact path="/signup" element={<>
-          <Navbar/>
+          <Navbar />
           <SignUpPage />
         </>}
         />
+        <Route exact path="/admin" element={<>
+          <Navbar />
+          <HeroSection />
+          <Admin /></>}
+        />
+        <Route
+          exact
+          path="/reset/:token"
+          element={
+            <div>
+              <Navbar />
+              <Reset />
+            </div>
+          }
+        />
+
       </Routes>
       <MYFooter />
     </>

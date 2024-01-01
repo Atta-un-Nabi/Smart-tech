@@ -12,9 +12,10 @@ const SignUpPage = () => {
 
     try {
 
-      const response = await fetch("https://smart-tech-rho.vercel.app/api/createUser", {
+      const response = await fetch("https://smart-tech-rho.vercel.app/createUser", {
         method: 'POST',
         headers: {
+          'X-Content-Type-Options': 'nosniff',
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({

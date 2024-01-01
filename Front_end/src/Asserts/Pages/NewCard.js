@@ -26,6 +26,7 @@ const NewCard = (props) => {
             const response = await fetch('https://smart-tech-rho.vercel.app/api/CreateProduct', {
                 method: 'POST',
                 headers: {
+                    'X-Content-Type-Options': 'nosniff',
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({

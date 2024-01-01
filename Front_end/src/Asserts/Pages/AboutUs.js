@@ -1,6 +1,5 @@
 import React from 'react';
 import './about.css';
-// import image1 from ''
 const AboutUs = () => {
   return (
     <div className='about-full' >

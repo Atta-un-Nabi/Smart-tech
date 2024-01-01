@@ -1,7 +1,4 @@
 import './Category.css';
-// import image from '../../Pics/Laptop (HD) (1).png';
-// import image1 from '../../Pics/Headphones (HD).png';
-// import image2 from '../../Pics/Knowledge (HD).png';
 import image3 from '../../Pics/cpu.jpg';
 import image4 from '../../Pics/wall1.jpg';
 import image5 from '../../Pics/wall2.jpg';

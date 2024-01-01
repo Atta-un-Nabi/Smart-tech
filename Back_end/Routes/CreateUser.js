@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const User = require('../Models/User');
 const { body, validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs'); // Use bcryptjs instead of bcrypt
+const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const secretKey = process.env.secretKey;
 
@@ -28,29 +28,40 @@ const verifyToken = (req, res, next) => {
     });
 };
 
-router.post('/createUser',
-    body('email', "Your email is incorrect").isEmail(),
-    body('password', "your Password is Incorrect").isLength({ min: 5 }),
+router.post(
+    '/createUser',
+    body('email', 'Invalid email').isEmail(),
+    body('password', 'Password must be at least 5 characters').isLength({ min: 5 }),
     async (req, res) => {
-        const result = validationResult(req);
-        if (!result.isEmpty()) {
-            return res.status(400).json({ errors: result.array() });
-        }
         try {
+            // Check if the email already exists
+            const existingUser = await User.findOne({ email: req.body.email });
+            if (existingUser) {
+                return res.status(400).json({ success: false, error: 'Email already exists' });
+            }
+
+            // Hash the password
             const hash = bcrypt.hashSync(req.body.password, 15);
+
+            // Create the new user
             await User.create({
                 firstName: req.body.firstName,
                 lastName: req.body.lastName,
                 email: req.body.email,
                 gender: req.body.gender,
-                password: hash
+                password: hash,
             });
-            res.json({ success: true });
+
+            res.json({ success: true, message: 'User created successfully' });
         } catch (error) {
             console.error(error);
             res.status(500).json({ success: false, error: 'Internal Server Error' });
         }
-    });
+    }
+);
+
+module.exports = router;
+
 
 router.post('/login',
     body('email', "Your email is incorrect").isEmail(),
@@ -94,10 +105,8 @@ router.post('/login',
         }
     });
 
-// Endpoint for token verification
 router.post('/authCheck', verifyToken, (req, res) => {
 
-    // If the middleware passes, the token is valid
     res.json({ success: true, message: 'Token is valid', user: { userId: req.userId, username: req.username } });
 });
 

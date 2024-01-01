@@ -16,9 +16,10 @@ const AdminPage = () => {
   const loadData = async () => {
     try {
       setShowNewCard(false); 
-      const response = await fetch("https://smart-tech-rho.vercel.app/api/LoadData", {
+      const response = await fetch("https://smart-tech-rho.vercel.app/LoadData", {
         method: "POST",
         headers: {
+          'X-Content-Type-Options': 'nosniff',
           "Content-Type": "application/json",
         },
       });

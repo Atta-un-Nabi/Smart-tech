@@ -1,41 +1,72 @@
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import React from 'react';
-
+import('dotenv').config();
 function Navbar() {
   const navigate = useNavigate();
+  const [authenticated, setAuthenticated] = useState(false);
+
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const authToken = localStorage.getItem('authToken');
+        const response = await fetch("https://smart-tech-rho.vercel.app/authCheck", {
+          method: "POST",
+          headers: {
+            'X-Content-Type-Options': 'nosniff',
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${authToken}`,
+          },
+        });
+
+        if (response.ok) {
+          setAuthenticated(true);
+        } else {
+          setAuthenticated(false);
+        }
+      } catch (error) {
+        console.error("Auth check error:", error);
+        setAuthenticated(false);
+      }
+    };
+
+    checkAuth();
+  }, []);
+
   const handleAdmin = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       const authToken = localStorage.getItem('authToken');
-      const response = await fetch("https://smart-tech-rho.vercel.app/api/authCheck", {
+      const response = await fetch("https://smart-tech-rho.vercel.app/authCheck", {
         method: "POST",
         headers: {
+          'X-Content-Type-Options': 'nosniff',
           "Content-Type": "application/json",
           "Authorization": `Bearer ${authToken}`,
         },
       });
-  
-      if (response) {
+
+      if (response.ok) {
         const data = await response.json();
-  
-        if (data.user && data.user.username === 'smartTechAdmmin') {
+
+        if (data.user && data.user.username === (process.env.Admin_Secret)) {
           navigate('/admin');
         } else {
-          alert('Access Deniend try to login with admin account')
+          alert('Access Denied. Try logging in with the admin account');
           navigate('/login');
         }
       } else {
-        alert("Incorrect credentials of admin")// Handle unsuccessful authentication or other errors
-         navigate('/login');
+        alert("Incorrect credentials of admin"); // Handle unsuccessful authentication or other errors
+        navigate('/login');
       }
     } catch (error) {
       // Handle network or other errors
       console.error(error);
     }
   };
-  
+
   const handleLogout = () => {
     localStorage.removeItem('authToken');
+    setAuthenticated(false);
   };
   return (
     <>
@@ -87,7 +118,7 @@ function Navbar() {
                     User profiles
                   </Link>
                   <ul className="dropdown-menu dropdown-menu-dark" style={{ backgroundColor: '#fffff', opacity: 0.5 }}>
-                    {!(localStorage.getItem('authToken')) ? (
+                    {!authenticated ? (
                       <>
                         <li>
                           <Link to="/login" className="dropdown-item" style={{ color: 'wheat' }}>

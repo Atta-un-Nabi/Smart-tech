@@ -1,85 +1,83 @@
-import image1 from '../Pics/image-product-1.jpg'
-import image2 from '../Pics/image-product-2.jpg'
-import image3 from '../Pics/image-product-3.jpg'
-import image4 from '../Pics/image-product-4.jpg'
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useProducts } from './Home/ProductContext'; // Assuming you have ProductContext in a file
 import './ProductPage.css';
 
-
-
 const ProductPage = () => {
-    const [totalItems, setTotalItems] = useState(1);
+  const { products } = useProducts();
+  const { category, id } = useParams();
+  const [totalItems, setTotalItems] = useState(1);
+  const [currentProduct, setCurrentProduct] = useState(null);
+  const [thumbnailProducts, setThumbnailProducts] = useState([]);
 
-    const handleIncrement = () => {
-        setTotalItems(totalItems + 1);
-    };
+  useEffect(() => {
+    // Find the clicked product
+    const clickedProduct = products.find((product) => product._id === id);
 
-    const handleDecrement = () => {
-        setTotalItems((prev) => (prev > 1 ? prev - 1 : 1));
-    };
+    // Filter products by category
+    const categoryProducts = products.filter((product) => product.Category === category);
 
-    const handleChange = (e) => {
-        const value = parseInt(e.target.value, 10);
-        setTotalItems(value > 0 ? value : 1);
-    };
+    // Set the state
+    setCurrentProduct(clickedProduct);
+    setThumbnailProducts(categoryProducts.slice(0, 4));
+  }, [category, id, products]);
 
-    const [currentImage, setCurrentImage] = useState(0);
-    const productImages = [
-        image1,
-        image2,
-        image3,
-        image4,
-    ];
+  const handleIncrement = () => {
+    setTotalItems(totalItems + 1);
+  };
 
-    const handleImageChange = (index) => {
-        setCurrentImage(index);
-    };
+  const handleDecrement = () => {
+    setTotalItems((prev) => (prev > 1 ? prev - 1 : 1));
+  };
 
-    return (
-        <div>
-            <div className="product-page">
-                <div className="product-images">
-                    <img className='img1' src={process.env.PUBLIC_URL + productImages[currentImage]} alt="Product" />
-                    <div className="image-thumbnails">
-                        {productImages.map((image, index) => (
-                            <img
-                                key={index}
-                                src={image}
-                                alt={`Thumbnail ${index + 1}`}
-                                className={index === currentImage ? 'active-thumbnail' : ''}
-                                onClick={() => handleImageChange(index)}
-                            />
-                        ))}
-                    </div>
-                </div>
-                <div className="product-details">
-                    <h2 className="product-title">Product Title</h2>
-                    <p className="product-price">$99.99</p>
-                    <h3 className="product-title" style={{ fontSize: '1.8rem' }}>Discription:</h3>
-                    <p className="product-description">
-                        <p>Introducing LPS Generation 7: A new generation of Littlest Pet Shop has arrived; Series 1 Generation 7 is here! Farm Besties Collectors Set includes: 5 unique bobblin’ head pets, 7 cute accessories, 1 collector card, 1 virtual code , and 1 collector’s guide. Pets #56 to #60.</p>
-                        <p>Farm Besties Collector’s Set: Littlest Pet Shop, Collector Set offers 2 unique themes. Meet our Farm besties, pets #56 to #60. Run around with rooster, goat, and the rest of the crew!</p>
-                        <p>Discover Your New Pets: LPS pets are 2” collectible figures with bobblin’ heads. Use the collector’s card to discover each adorable pet, its unique personality, breed, and rarity level.</p>
-                        <p>Virtual Play: Join our virtual play experience! With the code on your coin, you can unlock unique surprises, including virtual pets. Scan the QR code on our packaging or on the back of the collector card to learn more!</p>
-                        <p>About Littlest Pet Shop: Littlest Pet Shop encourages community and imaginative play.Experience the joy of unboxing and discovering your new pet - friends.Collect them all, share, and trade.Welcome to the world of LPS!</p >
-                    </p >
-                    <div className="quantity-controls">
-                        <div className="increment">
-                            <button onClick={handleDecrement}>-</button>
-                            <input
-                                type="number"
-                                name="totalItems"
-                                id="totalItems"
-                                value={totalItems}
-                                onChange={handleChange}
-                            />
-                            <button onClick={handleIncrement}>+</button>
-                        </div>
-                    </div>
-                    <button className="add-to-cart-button">Add to Cart</button>
-                </div >
-            </div >
-        </div>
-    );
+  const handleChange = (e) => {
+    const value = parseInt(e.target.value, 10);
+    setTotalItems(value > 0 ? value : 1);
+  };
+
+  return (
+    <div className="product-page">
+      {currentProduct && (
+        <>
+          <div className="product-images">
+            <img className='img1' src={process.env.PUBLIC_URL + currentProduct.image} alt={currentProduct.Name} />
+          </div>
+          <div className="image-thumbnails">
+            {thumbnailProducts.map((product) => (
+              <img
+                key={product._id}
+                src={process.env.PUBLIC_URL + product.image}
+                alt={product.Name}
+                className={`thumbnail-image${currentProduct._id === product._id ? ' active-thumbnail' : ''}`}
+                style={{ width: '80px', height: '80px', marginRight: '5px' }}
+                onClick={() => setCurrentProduct(product)}
+              />
+            ))}
+          </div>
+          <div className="product-details">
+            <h2 className="product-title">{currentProduct.Name}</h2>
+            <p className="product-price">${currentProduct.price}</p>
+            <h3 className="product-title">Description:</h3>
+            <p className="product-description">{currentProduct.Discription}</p>
+            <div className="quantity-controls">
+              <div className="increment">
+                <button onClick={handleDecrement}>-</button>
+                <input
+                  type="number"
+                  name="totalItems"
+                  id="totalItems"
+                  value={totalItems}
+                  onChange={handleChange}
+                />
+                <button onClick={handleIncrement}>+</button>
+              </div>
+            </div>
+            <button className="add-to-cart-button">Add to Cart</button>
+          </div>
+        </>
+      )}
+    </div>
+  );
 };
+
 export default ProductPage;

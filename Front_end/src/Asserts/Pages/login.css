@@ -54,21 +54,25 @@
   font-size: 12px;
 }
 
-.login-box form a {
+.login-box form a , 
+.login-box form button {
   position: relative;
-  display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 10px;
+  background-color: transparent;
   color: rgb(63, 217, 225);
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 40px;
-  letter-spacing: 4px
+  margin-top: 20px;
+  letter-spacing: 3px;
+  border-radius: 10px;
+  border: 0px solid;
 }
 
-.login-box a:hover {
+.login-box a:hover,
+.login-box button:hover {
   background: rgb(63, 217, 225);
   color: rgb(81, 73, 206);
   border-radius: 5px;

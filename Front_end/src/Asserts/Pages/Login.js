@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import video1 from "../Pics/vid2.mp4";
-
 import "./login.css";
 
 function Login() {
@@ -15,6 +14,7 @@ function Login() {
       const response = await fetch("https://smart-tech-rho.vercel.app/api/login", {
         method: "POST",
         headers: {
+          'X-Content-Type-Options': 'nosniff',
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
@@ -30,7 +30,7 @@ function Login() {
       const json = await response.json();
 
       if (json.success) {
-        localStorage.setItem("authToken", json.authToken)
+        localStorage.setItem("authToken", json.authToken);
         console.log('Successfully logged in. See console.', json.authToken);
         navigate('/');
       } else {
@@ -39,6 +39,37 @@ function Login() {
     } catch (error) {
       console.error('Fetch error:', error);
       alert(`Incorrect login credentials. See console for details: ${error}`);
+    }
+  };
+
+  const handleForgot = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await fetch("https://smart-tech-rho.vercel.app/ForgetPass", {
+        method: "POST",
+        headers: {
+          'X-Content-Type-Options': 'nosniff',
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: userData.email,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to fetch: ${response.status} - ${response.statusText}`);
+      }
+
+      const json = await response.json();
+
+      if (json.success) {
+        alert("Password reset email sent successfully. Check your inbox.");
+      } else {
+        alert(json.error);
+      }
+    } catch (error) {
+      console.error('Fetch error:', error);
+      alert(`Error sending password reset email. See console for details: ${error}`);
     }
   };
 
@@ -80,11 +111,22 @@ function Login() {
               <label>Password</label>
             </div>
 
+            <button onClick={handleForgot}>Forgot Password</button>
+
             <button id="submit-button" type="submit" onClick={submitForm}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
               Submit
             </button>
-
-            <Link to="/signup">New User</Link>
+            <button style={{ float: 'right' }}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <Link to="/signup">New User</Link>
+            </button>
           </form>
         </div>
       </div>

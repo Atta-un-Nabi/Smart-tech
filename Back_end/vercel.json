@@ -4,10 +4,6 @@
     "routes": [
       { "handle": "filesystem" },
       { "src": "/api/(.*)", "dest": "index.js" }
-    ],
-    "env": {
-    "conn": "mongodb+srv://Atta-un-nabi:SARdar@cluster0.qia72xf.mongodb.net/Userdata?retryWrites=true&w=majority",
-    "secterKey":"repoleveDehT]kol-ruhS[yBdetearCerAtahTsnekkoThtuAfOterceSpoTsIsihT"
-  }
+    ]
   }
   
