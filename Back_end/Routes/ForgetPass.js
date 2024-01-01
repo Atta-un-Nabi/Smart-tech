@@ -33,6 +33,7 @@ router.post('/ForgetPass', async (req, res) => {
             to: email,
             from: {email: A_email},
             subject: 'Password Reset',
+            text : "This Email is sent by Smart Tech",
             html: `<!DOCTYPE html>
             <html lang="en">
               <head>
