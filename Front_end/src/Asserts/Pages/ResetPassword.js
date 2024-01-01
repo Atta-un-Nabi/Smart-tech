@@ -26,7 +26,7 @@ const ResetPassword = () => {
       // Include the reset token and email in the request body
       const requestData = { ...data, token, email: data.email };
 
-      const response = await fetch('http://localhost:4000/api/reset-password', {
+      const response = await fetch('https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/api/reset-password', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
