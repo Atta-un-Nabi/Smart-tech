@@ -6,7 +6,7 @@ const ResetToken = require('../Models/Reset');
 const User = require('../Models/User');
 const bcrypt = require('bcryptjs');
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-const A_email = process.env.A_email;
+const A_email = process.env.Email_Address;
 // Function to store reset token in the database
 const saveResetTokenToDB = async (email, token) => {
     try {
@@ -27,11 +27,11 @@ router.post('/ForgetPass', async (req, res) => {
     try {
         await saveResetTokenToDB(email, resetToken);
 
-        const resetLink = `https://smart-tech-h8pc.vercel.app/reset/${resetToken}`;
+        const resetLink = `https://smart-tech-bm78.vercel.app/${resetToken}`;
 
         const msg = {
             to: email,
-            from: A_email,
+            from: {email : A_email},
             subject: 'Password Reset',
             text: `Click on the following link to reset your password: ${resetLink}`,
             html: `<b>Click on the following link to reset your password:</b><a href="${resetLink}">${resetLink}</a>`

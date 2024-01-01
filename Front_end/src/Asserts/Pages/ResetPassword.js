@@ -27,6 +27,7 @@ const ResetPassword = () => {
       const requestData = { ...data, token, email: data.email };
 
       const response = await fetch('https://smart-tech-tawny.vercel.app/api/reset-password', {
+
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

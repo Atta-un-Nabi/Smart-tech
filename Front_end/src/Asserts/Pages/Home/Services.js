@@ -32,6 +32,7 @@ const Services = () => {
 
     try {
       const response = await fetch("https://smart-tech-tawny.vercel.app/api/LoadData", {
+
         method: "POST",
         headers: {
           'X-Content-Type-Options': 'nosniff',

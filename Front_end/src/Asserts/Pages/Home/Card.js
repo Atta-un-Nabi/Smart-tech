@@ -19,7 +19,6 @@ const Card = ({ product, changeInterface }) => {
     e.preventDefault();
     try {
       const response = await fetch('https://smart-tech-tawny.vercel.app/api/UpdateProduct', {
-        
         method: 'POST',
         headers: {
           'X-Content-Type-Options': 'nosniff',

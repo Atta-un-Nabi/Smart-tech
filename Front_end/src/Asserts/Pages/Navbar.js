@@ -37,6 +37,7 @@ function Navbar() {
       console.log(process.env)
       const authToken = localStorage.getItem('authToken');
       const response = await fetch("https://smart-tech-tawny.vercel.app/api/authCheck", {
+
         method: "POST",
         headers: {
           'X-Content-Type-Options': 'nosniff',

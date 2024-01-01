@@ -1,3 +1,4 @@
+//comments on complete change
 import React, { useState } from 'react';
 import './SignUpPage.css';
 import image1 from '../Pics/Internal.gif'
@@ -11,7 +12,6 @@ const SignUpPage = () => {
     e.preventDefault();
 
     try {
-
       const response = await fetch("https://smart-tech-tawny.vercel.app/api/createUser", {
         method: 'POST',
         headers: {
