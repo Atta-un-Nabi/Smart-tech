@@ -33,8 +33,8 @@ router.post('/ForgetPass', async (req, res) => {
             to: email,
             from: {email : A_email},
             subject: 'Password Reset',
-            text: `Click on the following link to reset your password: ${resetLink}`,
-            html: `<b>Click on the following link to reset your password:</b><a href="${resetLink}">${resetLink}</a>`
+            text: `Hii this is Smart tech. you are reciving this email because you have send the request to reset the password of your account, if you have not send this email ignore this link otherwise go to this link to reset your password.Click on the following link to reset your password: ${resetLink}`,
+            html: `<b>Hii this is Smart tech. you are reciving this email because you have send the request to reset the password of your account, if you have not send this email ignore this link otherwise go to this link to reset your password. Click on the following link to reset your password:</b><a href="${resetLink}">${resetLink}</a>`
         };
 
         await sgMail.send(msg);
