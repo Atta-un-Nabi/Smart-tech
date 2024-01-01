@@ -23,7 +23,7 @@ const NewCard = (props) => {
     const handleDetailsUpdate = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch('https://smart-tech-rho.vercel.app/api/CreateProduct', {
+            const response = await fetch('https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/api/CreateProduct', {
                 method: 'POST',
                 headers: {
                     'X-Content-Type-Options': 'nosniff',
