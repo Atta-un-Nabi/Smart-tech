@@ -1,3 +1,4 @@
+//comments on complete change
 import React, { useState } from 'react';
 import './SignUpPage.css';
 import image1 from '../Pics/Internal.gif'
