@@ -11,7 +11,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await fetch("https://smart-tech-rho.vercel.app/api/login", {
+      const response = await fetch("https://smart-tech-tawny.vercel.app/api/login", {
         method: "POST",
         headers: {
           'X-Content-Type-Options': 'nosniff',
@@ -45,7 +45,7 @@ function Login() {
   const handleForgot = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://smart-tech-rho.vercel.app/ForgetPass", {
+      const response = await fetch("https://smart-tech-tawny.vercel.app/api/ForgetPass", {
         method: "POST",
         headers: {
           'X-Content-Type-Options': 'nosniff',
