@@ -9,7 +9,7 @@ function Navbar() {
     const checkAuth = async () => {
       try {
         const authToken = localStorage.getItem('authToken');
-        const response = await fetch("https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/authCheck", {
+        const response = await fetch("https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/api/authCheck", {
           method: "POST",
           headers: {
             'X-Content-Type-Options': 'nosniff',
@@ -36,7 +36,7 @@ function Navbar() {
     e.preventDefault();
     try {
       const authToken = localStorage.getItem('authToken');
-      const response = await fetch("https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/authCheck", {
+      const response = await fetch("https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/api/authCheck", {
         method: "POST",
         headers: {
           'X-Content-Type-Options': 'nosniff',
