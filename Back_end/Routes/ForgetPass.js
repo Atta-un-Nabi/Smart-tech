@@ -31,7 +31,7 @@ router.post('/ForgetPass', async (req, res) => {
 
         const msg = {
             to: email,
-            from: A_email,
+            from: {email : A_email},
             subject: 'Password Reset',
             text: `Click on the following link to reset your password: ${resetLink}`,
             html: `<b>Click on the following link to reset your password:</b><a href="${resetLink}">${resetLink}</a>`
