@@ -26,15 +26,89 @@ router.post('/ForgetPass', async (req, res) => {
 
     try {
         await saveResetTokenToDB(email, resetToken);
-
+            
         const resetLink = `https://smart-tech-syyf.vercel.app/reset/${resetToken}`;
 
         const msg = {
             to: email,
             from: {email : A_email},
             subject: 'Password Reset',
-            text: `Hii this is Smart tech. you are reciving this email because you have send the request to reset the password of your account, if you have not send this email ignore this link otherwise go to this link to reset your password.Click on the following link to reset your password: ${resetLink}`,
-            html: `<b>Hii this is Smart tech. you are reciving this email because you have send the request to reset the password of your account, if you have not send this email ignore this link otherwise go to this link to reset your password. Click on the following link to reset your password:</b><a href="${resetLink}">${resetLink}</a>`
+            html: `<!DOCTYPE html>
+            <html lang="en">
+
+              <head>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Password Reset - Smart Tech Electric Store</title>
+                <style>
+                body {
+                font-family: 'Arial', sans-serif;
+                background-color: #0d0d0d;
+                color: #ffffff;
+                margin: 0;
+                padding: 0;
+                }
+
+            .container {
+                width: 100%;
+                max-width: 600px;
+                margin: 0 auto;
+                padding: 20px;
+                }
+
+            .header {
+                text-align: center;
+                padding: 20px 0;
+                }
+
+            .logo {
+                max-width: 150px;
+                }
+
+            .content {
+                text-align: center;
+                padding: 20px 0;
+                }
+
+            .reset-link {
+                background-color: #007BFF;
+                color: #ffffff;
+                text-decoration: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                display: inline-block;
+                }
+
+        .footer {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://example.com/smart-tech-logo.png" alt="Smart Tech Electric Store" class="logo">
+        </div>
+        <div class="content">
+            <h2>Password Reset Request</h2>
+            <p>Dear User,</p>
+            <p>We received a request to reset your password for your Smart Tech Electric Store account. If you did not make this request, you can safely ignore this email.</p>
+            <p>To reset your password, please click on the link below:</p>
+            <p><a href=`${resetLink}`class="reset-link" target="_blank">Reset Your Password</a></p>
+            <p>If the above link does not work, copy and paste the following URL into your browser:</p>
+            <p>[${resetLink}]</p>
+            <p>Thank you for choosing Smart Tech Electric Store!</p>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Smart Tech Electric Store. All rights reserved.</p>
+         </div>
+       </div>
+    </body>`
         };
 
         await sgMail.send(msg);
