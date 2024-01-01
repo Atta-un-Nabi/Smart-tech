@@ -31,11 +31,10 @@ router.post('/ForgetPass', async (req, res) => {
 
         const msg = {
             to: email,
-            from: {email : A_email},
+            from: {email: A_email},
             subject: 'Password Reset',
             html: `<!DOCTYPE html>
             <html lang="en">
-
               <head>
                 <meta charset="UTF-8">
                 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -123,7 +122,7 @@ router.post('/ForgetPass', async (req, res) => {
 router.post('/reset-password', async (req, res) => {
     const { email, password, token } = req.body;
     try {
-        let usr = await ResetToken.findOne({ email, token });
+        let usr = await ResetToken.findOneAndRemove({ email, token });
         if (!usr) {
             return res.status(400).json({ errors: "No record found Email Id" });
         }
