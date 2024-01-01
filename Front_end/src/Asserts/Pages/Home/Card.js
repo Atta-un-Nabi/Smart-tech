@@ -18,7 +18,7 @@ const Card = ({ product, changeInterface }) => {
   const handleDetailsUpdate = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://smart-tech-rho.vercel.app/UpdateProduct', {
+      const response = await fetch('https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/UpdateProduct', {
         
         method: 'POST',
         headers: {
@@ -46,7 +46,7 @@ const Card = ({ product, changeInterface }) => {
 
   const handelDelete = async () => {
     try {
-      let response = await fetch('https://smart-tech-rho.vercel.app/DeleteProduct', {
+      let response = await fetch('https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/DeleteProduct', {
         method: 'POST',
         headers: {
           'X-Content-Type-Options': 'nosniff',
