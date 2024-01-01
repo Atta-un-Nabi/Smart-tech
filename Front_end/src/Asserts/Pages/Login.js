@@ -11,7 +11,7 @@ function Login() {
     event.preventDefault();
 
     try {
-      const response = await fetch("https://smart-tech-rho.vercel.app/api/login", {
+      const response = await fetch("https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/login", {
         method: "POST",
         headers: {
           'X-Content-Type-Options': 'nosniff',
