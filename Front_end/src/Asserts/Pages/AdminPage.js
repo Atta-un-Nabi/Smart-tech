@@ -16,7 +16,7 @@ const AdminPage = () => {
   const loadData = async () => {
     try {
       setShowNewCard(false); 
-      const response = await fetch("https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/LoadData", {
+      const response = await fetch("https://smart-tech-l4lqlqntn-atta-un-nabis-projects.vercel.app/api/LoadData", {
         method: "POST",
         headers: {
           'X-Content-Type-Options': 'nosniff',
