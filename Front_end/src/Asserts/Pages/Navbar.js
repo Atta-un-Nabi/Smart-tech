@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import('dotenv').config();
+const secret = process.env.Admin_Secret;
 function Navbar() {
   const navigate = useNavigate();
   const [authenticated, setAuthenticated] = useState(false);
@@ -48,7 +48,7 @@ function Navbar() {
       if (response.ok) {
         const data = await response.json();
 
-        if (data.user && data.user.username === (process.env.Admin_Secret)) {
+        if (data.user && data.user.username === secret) {
           navigate('/admin');
         } else {
           alert('Access Denied. Try logging in with the admin account');
