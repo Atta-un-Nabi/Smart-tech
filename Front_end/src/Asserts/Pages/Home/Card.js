@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import './cards.css'
 
 const Card = ({ product, changeInterface }) => {
   const [formData, setFormData] = useState({
@@ -19,6 +20,7 @@ const Card = ({ product, changeInterface }) => {
     e.preventDefault();
     try {
       const response = await fetch('https://smart-tech-tawny.vercel.app/api/UpdateProduct', {
+
         method: 'POST',
         headers: {
           'X-Content-Type-Options': 'nosniff',
@@ -78,11 +80,11 @@ const Card = ({ product, changeInterface }) => {
   };
 
   return (
-    <div className="card" style={{ width: '18rem' }}>
-      <img src={product.image} className="card-img-top" alt="..." />
-      <div className="card-body" style={{ margin: '2px', width: '100%' }}>
-        <div className="input-group" style={{ marginBottom: '4px' }}>
-          <span className="input-group-text">{ product.Category}</span>
+    <div className="AdminCard">
+      <img src={product.image} className="AdminCardImg" alt="..." />
+      <div className="adminCardBody" >
+        <div className="AdminCardInputGroup" >
+          <span className="CardSpan" style={{ color: 'black',}}>{product.Category}</span>
           <input
             type="text"
             name="title"
@@ -92,8 +94,8 @@ const Card = ({ product, changeInterface }) => {
             onChange={handleChange}
             style={{ width: '100%', marginBottom: '4px' }}
           />
-          <input
-            type="text"
+
+          <textarea
             name="description"
             aria-label="Description"
             className="form-control"
@@ -101,8 +103,7 @@ const Card = ({ product, changeInterface }) => {
             onChange={handleChange}
             style={{ width: '100%', marginBottom: '4px' }}
           />
-        </div>
-        <div className="input-group" style={{ width: '100%', marginBottom: '4px' }}>
+
           <input
             type="text"
             name="price"
@@ -113,24 +114,28 @@ const Card = ({ product, changeInterface }) => {
             style={{ width: '100%', marginBottom: '4px' }}
           />
         </div>
-        <div className="d-grid gap-2 col-6 mx-auto">
-          <button
-            className="btn btn-outline-success"
-            style={{ marginTop: '3px' }}
-            onClick={handleDetailsUpdate}
-          >
-            Update
-          </button>
+
+        <div className="d-flex justify-content-around">
+          <div  className="d-grid gap-2 col-6">
+            <button
+              className="btn btn-outline-primary AdminCardButton"
+              style={{ marginTop: '3px' }}
+              onClick={handleDetailsUpdate}
+            >
+              Update
+            </button>
+          </div>
+          <div className="d-grid gap-2 col-6">
+            <button
+              className="btn btn-outline-danger AdminCardButton"
+              style={{ marginTop: '3px', float:'right' }}
+              onClick={handelDelete}
+            >
+              Delete
+            </button>
+          </div>
         </div>
-        <div className="d-grid gap-2 col-6 mx-auto">
-          <button
-            className="btn btn-outline-danger"
-            style={{ marginTop: '3px' }}
-            onClick={handelDelete}
-          >
-            Delete
-          </button>
-        </div>
+
       </div>
     </div>
   );

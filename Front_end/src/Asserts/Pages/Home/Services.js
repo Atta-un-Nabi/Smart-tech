@@ -1,7 +1,5 @@
 import React, { useState, useMemo } from 'react';
-
 import { useProducts } from './ProductContext';  // Assuming you have ProductContext in a file
-
 import './services.css';
 import Card from './CardShow';
 import image2 from '../../Pics/Internal.gif';
@@ -32,7 +30,6 @@ const Services = () => {
 
     try {
       const response = await fetch("https://smart-tech-tawny.vercel.app/api/LoadData", {
-
         method: "POST",
         headers: {
           'X-Content-Type-Options': 'nosniff',
@@ -59,16 +56,14 @@ const Services = () => {
     return (
       <div
         style={{
-          paddingBottom: "5px",
-          width: "100%",
-          overflow: "hidden",
-          whiteSpace: "nowrap"
+          display:'inline-block', width:'100%'
         }}
       >
         {filteredProducts.map((product) => (
-          <div className="container" key={product._id}>
-            <div className="row">
-              <div className="col-4">
+          <div class="serviceCardContainer"
+            key={product._id}>
+            <div className="row" >
+              <div>
                 <Card key={product._id} product={product} />
               </div>
             </div>
@@ -84,7 +79,7 @@ const Services = () => {
         <h1 className="services">Our Services</h1>
 
         {/* Advanced Electronic Projects */}
-        <div className="service-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+        <div className="service-card" style={{ display: 'grid', gap: '20px' }}>
           <div className="service-left">
             <img src={image7} alt="Service" className="service-image" />
           </div>
@@ -92,11 +87,11 @@ const Services = () => {
             <h2 className="service-title" >
               <button
                 type="button"
-                className="btn btn-outline-info fs-3 fw-bold"
+                className="btn btn-outline-info fw-bold custom-btn"
                 style={{ color: 'white' }}
                 onClick={(e) => handleService(e, "Advance")}
               >
-                  Advanced Electronic Projects
+                Advanced Electronic Projects
               </button>
             </h2>
             <p className="service-description">
@@ -107,7 +102,7 @@ const Services = () => {
         {activeCategory === "Advance" && renderCards()}
 
         {/* Electronic Repairing */}
-        <div className="service-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+        <div className="service-card" style={{ display: 'grid', gap: '20px' }}>
           <div className="service-left">
             <img src={image2} alt="Service" className="service-image" />
           </div>
@@ -115,7 +110,7 @@ const Services = () => {
             <h2 className="service-title">
               <button
                 type="button"
-                className="btn btn-outline-info fs-3 fw-bold"
+                className="btn btn-outline-info fw-bold custom-btn"
                 style={{ color: 'white' }}
                 onClick={(e) => handleService(e, "Repairing")}
               >
@@ -130,7 +125,7 @@ const Services = () => {
         {activeCategory === "Repairing" && renderCards()}
 
         {/* Household Electronics for Sale */}
-        <div className="service-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+        <div className="service-card" style={{ display: 'grid', gap: '20px' }}>
           <div className="service-left">
             <img src={image8} alt="Service" className="service-image" />
           </div>
@@ -138,7 +133,7 @@ const Services = () => {
             <h2 className="service-title">
               <button
                 type="button"
-                className="btn btn-outline-info fs-3 fw-bold"
+                className="btn btn-outline-info fw-bold custom-btn"
                 style={{ color: 'white' }}
                 onClick={(e) => handleService(e, "Household")}
               >
@@ -153,7 +148,7 @@ const Services = () => {
         {activeCategory === "Household" && renderCards()}
 
         {/* Scientific Electronics projects */}
-        <div className="service-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px' }}>
+        <div className="service-card" style={{ display: 'grid', gap: '20px' }}>
           <div className="service-left">
             <img src={image9} alt="Service" className="service-image" />
           </div>
@@ -161,7 +156,7 @@ const Services = () => {
             <h2 className="service-title">
               <button
                 type="button"
-                className="btn btn-outline-info fs-3 fw-bold"
+                className="btn btn-outline-info fw-bold custom-btn"
                 style={{ color: 'white' }}
                 onClick={(e) => handleService(e, "Project")}
               >

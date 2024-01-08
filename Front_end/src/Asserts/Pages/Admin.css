@@ -1,28 +1,25 @@
-.h1,
-.h2,
-.h3 {
-  margin-bottom: 20px;
-  /* Additional inline styles applied */
-  color: #032F40;
-  font-size: 34px;
-  font-weight: bold;
-}
-
-.form {
+/* .form {
   margin-bottom: 30px;
-  /* Additional inline styles applied */
-  border: 2px solid black;
+  border: 2px solid rgb(254, 0, 0);
   width: 35%;
   border-radius: 15px;
   padding: 10px;
   background-color: #032F40;
   color: white;
 }
-
+*/ 
+.Admin{}
+.AdminCCButton {
+  font-Size: 25px;
+  margin-left: 30%;
+  width: 40%;
+  height: 60px;
+  margin-top: 3%;
+}
 .label {
+
   display: block;
   margin-bottom: 5px;
-  /* Additional inline styles applied */
   font-size: 20px;
   font-weight: bold;
   color: white;
@@ -56,7 +53,6 @@
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  /* Additional inline styles applied */
   width: 220px;
   height: 60px;
   border-radius: 12px;
@@ -68,7 +64,6 @@
 .ul {
   list-style-type: none;
   padding-left: 0;
-  /* Additional inline styles applied */
   padding-left: 10px;
   font-size: 25px;
   font-weight: bold;
@@ -83,23 +78,180 @@
   text-decoration: underline;
 }
 
-@media only screen and (max-width: 1441px) {
-  .form{
-    width: 0%;
+.Admin h2{
+  border-bottom: 2px solid grey;
+  width: 100%;
+  font-size: 60px;
+  text-align: center;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-bottom: 12px;
+}
+
+.AdminCard {
+  background-color: transparent;
+}
+
+.AdminContainer{
+  flex-wrap: nowrap;
+  background-Color: #c2d3ec;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-radius: 5%;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  padding: 2%;
+  margin: 62px;
+  display: flex;
+  position: relative;
+  float: inline-start;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 18.25%;
+  transition: 0.3s;
+}
+
+@media (max-width: 1441px) {
+  .AdminContainer{
+    flex-wrap: nowrap;
+    background-Color: #c2d3ec;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 2%;
+    margin: 27px;
+    display: flex;
+    position: relative;
+    float: inline-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 21%;
+    transition: 0.3s;
   }
-  .button {
-    background-color: #69a3c2;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    /* Additional inline styles applied */
-    width: 220px;
+}
+
+@media (max-width: 1025px) {
+  .AdminContainer{
+    flex-wrap: wrap;
+    background-Color: #c2d3ec;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 2%;
+    margin: 10px;
+    display: flex;
+    position: relative;
+    float: inline-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 23%;
+    transition: 0.3s;
+    overflow: hidden;
+    align-content: flex-start;
+  }
+}
+
+@media (max-width: 769px) {
+  .AdminContainer{
+    flex-wrap: wrap;
+    background-Color: #c2d3ec;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 3%;
+    margin: 30px;
+    display: flex;
+    position: relative;
+    float: inline-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 42%;
+    transition: 0.3s;
+    overflow: hidden;
+    align-content: flex-start;
+  }
+}
+
+@media (max-width: 426px) {
+  .AdminCCButton {
+    font-Size: 16px;
+    margin-left: 30%;
+    width: 40%;
     height: 60px;
-    border-radius: 12px;
-    margin-left: 65%;
-    font-size: 20px;
-    font-weight: bold;
+    margin-top: 3%;
+  }
+
+  .AdminContainer{
+    flex-wrap: wrap;
+    background-Color: #c2d3ec;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 3%;
+    margin: 7px;
+    display: flex;
+    position: relative;
+    float: inline-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 46%;
+    transition: 0.3s;
+    overflow: hidden;
+    align-content: flex-start;
+  }
+}
+
+@media (max-width: 376px) {
+    .AdminCCButton {
+    font-Size: 16px;
+    margin-left: 30%;
+    width: 40%;
+    height: 60px;
+    margin-top: 3%;
+  }
+}
+
+@media (max-width: 321px) {
+    .AdminCCButton {
+    font-Size: 16px;
+    margin-left: 30%;
+    width: 40%;
+    height: 60px;
+    margin-top: 3%;
+  }
+
+  .AdminContainer{
+    flex-wrap: wrap;
+    background-Color: #c2d3ec;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    border-radius: 5%;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    padding: 3%;
+    margin: 7px;
+    display: flex;
+    position: relative;
+    float: inline-start;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 45%;
+    transition: 0.3s;
+    overflow: hidden;
+    align-content: flex-start;
   }
 }

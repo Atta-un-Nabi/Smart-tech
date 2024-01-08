@@ -26,7 +26,7 @@
   justify-content: center;
 }
 
-.hero-button {
+/* .hero-button {
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
@@ -47,6 +47,8 @@
   cursor: pointer;
 }
 
+*/
+
 .hero-video {
   width: 700px;
   height: 450px;
@@ -62,7 +64,6 @@
   height: auto;
   margin-left: -100px;
   margin-bottom: -480px;
-  /* border-radius: 10px; */
 }
 
 @media only screen and (max-width: 1441px){
@@ -130,6 +131,26 @@
   } 
 }
 
+@media (max-width: 769px) {
+  .hero-content p {
+    font-size: 12px;
+    margin: 8px;
+    margin-bottom: 10px;
+  }
+
+  .hero-video {
+    width: 350px;
+    height: 350px;
+    border-radius: 60px;
+    margin-top: -160px;
+  }
+
+  .hero-video video {
+    margin-left: -30px;
+    margin-bottom: -345px;
+    border-radius: 0px, 100px;
+  }
+}
 @media screen and (max-width: 600px) {
   .hero-section {
     flex-direction: column-reverse;
@@ -155,4 +176,85 @@
     margin-left: 25px;
   }
 
+}
+@media (max-width: 426px) {
+  .hero-content p {
+    font-size: 12px;
+    margin: 8px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+  }
+
+  .hero-video {
+    width: 350px;
+    height: 350px;
+    border-radius: 60px;
+    margin-top: -200px;
+    margin-left: -10px;
+  }
+
+  .hero-video video {
+    margin-left: 0px;
+    margin-bottom: -345px;
+    border-radius: 0px 20px 0px ;
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+@media (max-width: 376px) {
+  .hero-content p {
+    font-size: 12px;
+    margin: 8px;
+    margin-top: -30px;
+    margin-bottom: 10px;
+  }
+
+  .hero-video {
+    width: 350px;
+    height: 350px;
+    border-radius: 60px;
+    margin-top: -200px;
+    margin-left: -10px;
+  }
+
+  .hero-video video {
+    margin-left: 0px;
+    margin-bottom: -345px;
+    border-radius: 0px 20px 0px ;
+  }
+
+  svg {
+    display: none;
+  }
+}
+
+@media (max-width: 321px) {
+  .hero-content p {
+    font-size: 9px;
+    margin: 8px;
+    margin-top: -60px;
+    margin-bottom: 10px;
+    margin-left: -35px;
+  }
+
+  .hero-video {
+    width: 300px;
+    height: 300px;
+    border-radius: 60px;
+    margin-top: -180px;
+    margin-left: -10px;
+  }
+
+  .hero-video video {
+    margin-left: 0px;
+    margin-bottom: -300px;
+    border-radius: 0px 20px 0px ;
+  }
+
+  svg{
+    display: none;
+  }
 }

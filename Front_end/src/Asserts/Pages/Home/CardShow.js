@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './CardShow.css'
 
 const CardShow = ({ product }) => {
   const history = useNavigate();
@@ -12,24 +13,20 @@ const CardShow = ({ product }) => {
   };
 
   return (
-    <div className="card" style={{ width: '18rem' }}>
-      <img src={product.image} className="card-img-top" alt="..." />
-      <div className="card-body" style={{ margin: '2px', width: '100%', justifyContent: 'left' }}>
-        <div className="input-group" style={{ marginBottom: '4px' }}>
-          <span className="input-group-text">{product.Category}</span>
-          <p style={{ width: '100%', marginBottom: '4px' }}>{product.Name}</p>
-          <p style={{ width: '100%', marginBottom: '4px' }}>{product.Discription}</p>
+    <div className="Ccard" onClick={handleClick}>
+      <img src={product.image} className="CSimg" alt="..."  />
+      <div className="CBody">
+        <div className="CSText">
+          <span className="CSTextspan">{product.Category}</span>
+          <p className='CSText'>{product.Name}</p>
+          <p className='CSText'>{product.price} $</p>
+          {/* <p className='CSText'>{product.Discription}</p> */}
         </div>
-        <div className="input-group" style={{ width: '100%', marginBottom: '4px' }}>
-          <p style={{ width: '100%', marginBottom: '4px' }}>{product.price}</p>
-        </div>
-        <button
-          type="button"
-          className="btn btn-outline-success"
-          onClick={handleClick}
-        >
+
+        {/* <button type="button" className="CSbtn" onClick={handleClick}>
           Details
-        </button>
+        </button> */}
+
       </div>
     </div>
   );

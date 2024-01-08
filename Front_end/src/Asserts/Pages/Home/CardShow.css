@@ -1,0 +1,340 @@
+.Ccard {
+    /* display: grid; */
+    margin: 10px;
+    vertical-align: top;
+    width: calc(25% - 20px);
+    box-sizing: border-box;
+    width: 18rem;
+    background-color: transparent;
+    border: none;
+}
+
+.CBody{
+    width: 100%;
+    justify-content: left;
+}
+
+.CSimg{
+    width: 100%;
+    height: 100%;
+    margin-top: -3%;
+    border: 2px solid #032F40;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.CSimg:hover{
+    border: 2px solid #0dcaf0;
+    border-radius: 12px;
+    filter: drop-shadow(2px 5px 6px );
+}
+
+.CSText{
+    width: auto;
+    color: #000000;
+    border: none;
+    font-size: 22px;
+    text-align: start;
+    margin-bottom: 0rem;
+    margin-left: 10px;
+}
+
+.CSTextspan{
+    font-weight: bold;
+    margin-left: -10px;
+}
+
+.CSbtn{
+    position: absolute;
+    bottom: 100px;
+    right: 34px;
+    border-Radius: 6px;
+    color: #02232a;
+    border-Color: #00232a;
+    width: 90px;
+    height: 35px;
+    background-color: transparent;
+    font-weight: 300;
+}
+
+.CSbtn:hover{
+    background-color: #006282;
+    color: aliceblue;
+}
+
+@media (max-width: 1441px) {
+    .Ccard {
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+        width: calc(25% - 20px);
+        box-sizing: border-box;
+        width: 18rem;
+        background-color: transparent;
+        border: none;
+    }
+    
+    .CBody{
+        width: 100%;
+        justify-content: left;
+    }
+    
+    .CSimg{
+        width: 90%;
+        height: 90%;
+        margin-top: -3%;
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    
+    .CSText{
+        width: auto;
+        color: #000000;
+        font-size: 22px;
+        text-align: start;
+        margin-bottom: 0rem;
+        margin-left: 10px;
+    }
+    
+    .CSTextspan{
+        margin-left: -10px;
+    }
+    
+    .CSbtn{
+        position: absolute;
+        bottom: 95px;
+        right: 34px;
+        border-Radius: 6px;
+        width: 90px;
+        height: 35px;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 1025px) {
+    .Ccard {
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+        width: calc(25% - 20px);
+        box-sizing: border-box;
+        width: 18rem;
+        background-color: transparent;
+        border: none;
+    }
+    
+    .CBody{
+        width: 100%;
+        justify-content: left;
+    }
+    
+    .CSimg{
+        width: 70%;
+        height: 70%;
+        margin-top: -5%;
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    
+    .CSText{
+        width: auto;
+        color: #000000;
+        font-size: 22px;
+        text-align: start;
+        margin-bottom: 0rem;
+        margin-left: 0px;
+    }
+
+    .CSText p{
+        font-size: 18px;
+        margin-left: 60px;
+    }
+    
+    .CSTextspan{
+        margin-left: 40px;
+    }
+    
+    .CSbtn{
+        position: absolute;
+        bottom: 80px;
+        right: 14px;
+        border-Radius: 6px;
+        width: 80px;
+        height: 30px;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 769px) {
+    
+    .Ccard {
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+        width: calc(25% - 20px);
+        box-sizing: border-box;
+        width: 18rem;
+        background-color: transparent;
+        border: none;
+    }
+    
+    .CBody{
+        width: 100%;
+        justify-content: left;
+    }
+    
+    .CSimg{
+        width: 50%;
+        height: 50%;
+        margin-top: -5%;
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    
+    .CSText{
+        width: auto;
+        color: #000000;
+        font-size: 18px;
+        text-align: start;
+        margin-bottom: 0rem;
+        margin-left: 20px;
+    }
+
+    .CSText p{
+        font-size: 18px;
+        margin-left: 60px;
+    }
+    
+    .CSTextspan{
+        margin-left: 50px;
+    }
+    
+    .CSbtn{
+        position: absolute;
+        bottom: 20px;
+        right: 14px;
+        border-Radius: 6px;
+        width: 60px;
+        font-size: 14px;
+        height: 25px;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 426px) {
+    .Ccard {
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+        width: calc(25% - 20px);
+        box-sizing: border-box;
+        width: 18rem;
+        background-color: transparent;
+        border: none;
+    }
+    
+    .CBody{
+        width: 100%;
+        justify-content: left;
+    }
+    
+    .CSimg{
+        width: 50%;
+        height: 50%;
+        margin-top: -1%;
+        margin-bottom: 2%;
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    
+    .CSText{
+        width: auto;
+        color: #000000;
+        font-size: 18px;
+        text-align: start;
+        margin-bottom: 0rem;
+        margin-left: 20px;
+    }
+
+    .CSText p{
+        font-size: 18px;
+        margin-left: 60px;
+    }
+    
+    .CSTextspan{
+        margin-left: 50px;
+    }
+    
+    .CSbtn{
+        position: absolute;
+        bottom: 20px;
+        right: 14px;
+        border-Radius: 6px;
+        width: 60px;
+        font-size: 14px;
+        height: 25px;
+        font-weight: 300;
+    }
+}
+
+@media (max-width: 376px) {}
+
+@media (max-width: 321px) {
+    .Ccard {
+        display: inline-block;
+        margin: 10px;
+        vertical-align: top;
+        width: calc(25% - 20px);
+        box-sizing: border-box;
+        width: 18rem;
+        background-color: transparent;
+        border: none;
+    }
+    
+    .CBody{
+        width: 100%;
+        justify-content: left;
+    }
+    
+    .CSimg{
+        width: 40%;
+        height: 40%;
+        margin-top: -2%;
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+    
+    .CSText{
+        width: auto;
+        color: #000000;
+        font-size: 14px;
+        text-align: start;
+        margin-bottom: 0rem;
+        margin-left: 34px;
+    }
+
+    .CSText p{
+        font-size: 13px;
+        margin-left: 60px;
+    }
+    
+    .CSTextspan{
+        margin-left: 50px;
+    }
+    
+    .CSbtn{
+        position: absolute;
+        bottom: 20px;
+        right: 14px;
+        border-Radius: 6px;
+        width: 60px;
+        font-size: 14px;
+        height: 25px;
+        font-weight: 300;
+    }
+}

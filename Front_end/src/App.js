@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Navbar from "./Asserts/Pages/Navbar";
 import Categories from "./Asserts/Pages/Home/Categories";
 import HeroSection from "./Asserts/Pages/Home/HeroSection";
@@ -13,6 +14,36 @@ import { ProductsProvider } from "./Asserts/Pages/Home/ProductContext";
 import Reset from "./Asserts/Pages/ResetPassword";
 
 function App() {
+  const [authenticated, setAuthenticated] = useState(false)
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const authToken = localStorage.getItem('authToken');
+        const response = await fetch("https://smart-tech-tawny.vercel.app/api/authCheck", {
+          method: "POST",
+          headers: {
+            'X-Content-Type-Options': 'nosniff',
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${authToken}`,
+          },
+        });
+
+        if (response.ok) {
+          setAuthenticated(true);
+        } else {
+          setAuthenticated(false);
+          console.error("this is Running")
+        }
+      } catch (error) {
+        console.error("Auth check error:", error);
+        setAuthenticated(false);
+      }
+    };
+
+    checkAuth();
+
+  }, []);
+
   return (
     <>
 
@@ -39,6 +70,7 @@ function App() {
             </ProductsProvider>
           }
         />
+
         <Route exact path="/login" element={<>
           <Login />
         </>}
@@ -52,7 +84,16 @@ function App() {
         <Route exact path="/admin" element={<>
           <Navbar />
           <HeroSection />
-          <Admin /></>}
+          {authenticated ? (
+            <div>
+              <Admin />
+            </div>) : (
+                <>
+                  <h3 style={{color:'red'}}>Something Went Wrong Please try again</h3>  
+                </>
+          )}
+        </>}
+
         />
         <Route
           exact

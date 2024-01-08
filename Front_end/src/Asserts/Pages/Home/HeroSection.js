@@ -7,12 +7,10 @@ const HeroSection = () => {
     <>
       <div className="hero-section">
         <div className="hero-content hero-PB">
-          {/* <h1>Welcome to our E-commerce Store</h1> */}
-          <TypographyAnimation text="Welcome to our E-commerce Store  '" />
+          <TypographyAnimation text="Welcome to our E-commerce Store ." />
 
           <div className="hero-PB">
             <p>Discover amazing products at great prices.</p>
-            <button className="hero-button">Shop Now</button>
           </div>
         </div>
         <div className="hero-video">

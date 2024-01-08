@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Card from "./Home/Card";
 import { useNavigate } from "react-router-dom";
 import NewCard from "./NewCard";
-
+import './Admin.css'
 // ... (other imports)
 
 const AdminPage = () => {
@@ -10,12 +10,12 @@ const AdminPage = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [showNewCard, setShowNewCard] = useState(false); 
+  const [showNewCard, setShowNewCard] = useState(false);
   const navigate = useNavigate();
 
   const loadData = async () => {
     try {
-      setShowNewCard(false); 
+      setShowNewCard(false);
       const response = await fetch("https://smart-tech-tawny.vercel.app/api/LoadData", {
         method: "POST",
         headers: {
@@ -53,21 +53,22 @@ const AdminPage = () => {
   }
 
   const handleChange = async () => {
-  await loadData(); 
-  navigate("/admin");
+    await loadData();
+    navigate("/admin");
   };
 
   const handleCreate = async () => {
-    setShowNewCard(true); // Hide NewCard
-      };
+    setShowNewCard(true);
+  };
 
   return (
-    <div>
-      <div className="d-grid gap-2 col-6 mx-auto">
-        <button className="btn btn-primary" type="button" onClick={handleCreate}>
+    <div className="Admin">
+      {/* <div className="d-grid gap-2 col-5 mx-auto"> */}
+        <button className="btn btn-outline-primary AdminCCButton"
+          type="button" onClick={handleCreate}>
           Create Card
         </button>
-      </div>
+      {/* </div> */}
 
       {showNewCard && <NewCard changeInterface={handleChange} />}
 
@@ -76,34 +77,25 @@ const AdminPage = () => {
       ) : (
         categories.map((category, index) => (
           <div key={category._id} style={{ width: "100%" }}>
-            <h2
-              style={{
-                borderBottom: "2px solid #ccc",
-                paddingBottom: "5px",
-                width: "100%",
-                overflow: "hidden",
-                whiteSpace: "nowrap",
-                animation: "fillWidth 7s forwards",
-              }}
-            >
-              {category.Name}
-            </h2>
+             
+            <h2> {category.Name} </h2>
+
             {products
               .filter((product) => product.Category === category.Name)
               .map((product) => (
-                <div className="container" key={product._id}>
-                  <div className="row">
-                    <div className="col-4">
+
+                // Cards in admin
+                <div className="AdminContainer"
+                  style={{  }} key={product._id} >
+                    <div className="col-4" style={{width:'100%'}}>
                       <Card
                         key={product._id}
                         product={product}
                         changeInterface={handleChange}
                       />
                     </div>
-                  </div>
                 </div>
               ))}
-            {index < categories.length - 1 && <hr style={{ margin: "20px 0" }} />}
           </div>
         ))
       )}

@@ -77,15 +77,28 @@ function Login() {
     setUserData({ ...userData, [event.target.name]: event.target.value });
   };
 
+  const goBack = () => {
+    navigate(-1); // Go back to the previous page
+  };
+
   return (
-    <div>
+    <div className="Login_full">
       <div>
+
+        {/* Background Video */}
         <video autoPlay muted loop id="myVideo">
           <source src={video1} type="video/mp4" />
         </video>
         <div className="login-box">
+
+          <button className="back-button" onClick={goBack}>
+            Back
+          </button>
+
           <h2>Login</h2>
           <form>
+
+            {/* email */}
             <div className="user-box">
               <input
                 type="email"
@@ -97,6 +110,8 @@ function Login() {
               />
               <label>Email</label>
             </div>
+
+            {/* password */}
             <div className="user-box">
               <input
                 type="password"
@@ -111,22 +126,29 @@ function Login() {
               <label>Password</label>
             </div>
 
-            <button onClick={handleForgot}>Forgot Password</button>
-
-            <button id="submit-button" type="submit" onClick={submitForm}>
+            {/* Submit Button */}
+            <button className="formbutton" id="submit-button" type="submit" onClick={submitForm}>
               <span></span>
               <span></span>
               <span></span>
               <span></span>
               Submit
             </button>
-            <button style={{ float: 'right' }}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <Link to="/signup">New User</Link>
+
+            {/* New user Button */}
+            <button className="formbutton" style={{ float: 'right', overflow: 'hidden' }}>
+              <Link to="./signup" style={{ color: '#3fd9e1', textDecoration: 'none' }} >
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                New User
+              </Link>
             </button>
+
+            {/* Forget Password */}
+            <button className="fpbutton" onClick={handleForgot}>Forgot Password</button>
+
           </form>
         </div>
       </div>
@@ -135,3 +157,4 @@ function Login() {
 }
 
 export default Login;
+

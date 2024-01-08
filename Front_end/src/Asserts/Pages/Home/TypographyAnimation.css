@@ -20,15 +20,15 @@
   position: absolute;
   inset: 0;
   width: 0%;
-  color: var(--clr);
+  color: #0dcaf0; /* Change here */
   overflow: hidden;
-  border-right: 6px solid var(--clr);
+  border-right: 6px solid #0dcaf0; /* Change here */
   transition: 1s ease-in-out;
 }
 
 .typography-container:hover .hover-text {
   width: 100%;
-  filter: drop-shadow(0 0 40px var(--clr));
+  filter: drop-shadow(0 0 40px #0dcaf0); /* Change here */
 }
 
 .typography-container:hover .text {
@@ -47,6 +47,42 @@
   .typography-container {
     font-size: 1.4rem;
     letter-spacing: 1.6px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 769px) {
+  .typography-container {
+    font-size: 1rem;
+    letter-spacing: 1.1px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 426px) {
+  .typography-container {
+    font-size: 1rem;
+    top: -40px;
+    letter-spacing: 1.1px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 376px) {
+  .typography-container {
+    font-size: 1rem;
+    top: -40px;
+    letter-spacing: 1.1px;
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 321px) {
+  .typography-container {
+    font-size: 0.8rem;
+    top: -50px;
+    left: -15px;
+    letter-spacing: 1.1px;
     line-height: 20px;
   }
 }

@@ -1,4 +1,3 @@
-//comments on complete change
 import React, { useState } from 'react';
 import './SignUpPage.css';
 import image1 from '../Pics/Internal.gif'
@@ -8,10 +7,13 @@ const SignUpPage = () => {
   const [UserData, setUserData] = useState({ firstname: "", lastname: "", gender: "", password: "", email: "" });
   const [c_password, setc_password] = useState("");
   const navigate = useNavigate();
+
+  // Hangel Signup Function
   const handleSignUp = async (e) => {
     e.preventDefault();
 
     try {
+
       const response = await fetch("https://smart-tech-tawny.vercel.app/api/createUser", {
         method: 'POST',
         headers: {
@@ -51,13 +53,18 @@ const SignUpPage = () => {
   };
 
   return (
-    <div className='signup-full'>
+    <div className='signup_full' >
       <div className='image1' >
-        <img src={image1} alt='background' style={{ borderRadius: '20px' }} />
+        <img src={image1} alt='background' />
       </div>
+
       <div className="signup-container">
+
+        {/* Signup Heading */}
         <h1>Sign Up</h1>
         <form onSubmit={handleSignUp}>
+
+          {/* First Name */}
           <div className="form-group">
             <label htmlFor="first-name" >First Name:</label>
             <input
@@ -69,6 +76,8 @@ const SignUpPage = () => {
               required
             />
           </div>
+
+          {/* Last Name */}
           <div className="form-group">
             <label htmlFor="last-name">Last Name:</label>
             <input
@@ -80,6 +89,8 @@ const SignUpPage = () => {
               required
             />
           </div>
+
+          {/* Gender */}
           <div className="form-group">
             <label>Gender:</label>
             <div className="radio-group">
@@ -115,6 +126,8 @@ const SignUpPage = () => {
               <label htmlFor="other">Other</label>
             </div>
           </div>
+
+          {/* Email */}
           <div className="form-group">
             <label htmlFor="email">Email:</label>
             <input
@@ -126,6 +139,8 @@ const SignUpPage = () => {
               required
             />
           </div>
+
+          {/* Password */}
           <div className="form-group">
             <label htmlFor="password">Password:</label>
             <input
@@ -140,6 +155,8 @@ const SignUpPage = () => {
             />
             <small>Password must be at least 8 characters and include uppercase and lowercase letters.</small>
           </div>
+
+          {/* Confirm Password */}
           <div className="form-group">
             <label htmlFor="confirm-password">Confirm Password:</label>
             <input
@@ -151,8 +168,12 @@ const SignUpPage = () => {
               required
             />
           </div>
+
+          {/* Signup Button */}
           <button type="submit">Sign Up</button>
-          <button type="submit"><Link to={'/login'}>Registered User </Link></button>
+
+          {/* Register User Button */}
+          <button className='Regbtn' type="submit"><Link className='Link' to={'/login'}>Registered User</Link></button>
         </form>
       </div>
     </div>

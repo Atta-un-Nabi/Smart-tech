@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '@mui/material/Button';
-
+import './newCard.css'
 
 
 const NewCard = (props) => {
@@ -84,21 +84,41 @@ const NewCard = (props) => {
             }
         }
     };
+
     return (
-        <div className="card" style={{ width: '18rem' }}>
-            <div>
-                {imageUrl && (<img src={imageUrl} className="card-img-top" alt="..." />
+        <div className="newCard" >
+            <div className='imgUploadAdmin'>
+                {imageUrl && (<img src={imageUrl} className='imgUploadAdminImg' alt="..." />
                 )}
-                <p>Upload Image </p>
-                <input type="file" accept="image/*" onChange={handleFileChange} />
-                <Button variant="contained" onClick={handleImageUpload}>
+                <input
+                    className="custom-file-input"
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                />
+
+                <label className="custom-file-label">
+                    {selectedFile ? selectedFile.name : 'Choose File'}
+                    <input
+                        type="file"
+                        accept="image/*"
+                        onChange={handleFileChange}
+                        className="custom-file-input"
+                    />
+                </label>
+                <Button style={{marginTop:'10px'}} variant="contained" onClick={handleImageUpload}>
                     Upload
                 </Button>
-
             </div>
-            <div className="card-body" style={{ margin: '2px', width: '100%' }}>
-                <div className="input-group" style={{ marginBottom: '4px' }}>
-                    <span className="input-group-text">Details</span>
+
+            <div className="newCard-card-body" >
+                <div className="input-group1" >
+                    <span style={{
+                        backgroundColor: 'transparent', color: 'black', border: 'none', fontWeight: '600', fontSize: '18px',
+                        paddingLeft: '0px'
+                    }}
+                        className="input-group-text">Details
+                    </span>
                     <input
                         type="text"
                         name="title"
@@ -109,22 +129,23 @@ const NewCard = (props) => {
                         style={{ width: '100%', marginBottom: '4px' }}
                         placeholder="Product Title"
                     />
-                    <input
-                        type="text"
+                    <textarea
                         name="description"
                         aria-label="Description"
-                        className="form-control"
-                        value={formData.description}
+                        class="form-control"
                         placeholder="Product Description"
+                        value={formData.description}
                         onChange={handleChange}
-                        style={{ width: '100%', marginBottom: '4px' }}
-                    />
+                    ></textarea>
+
                     <DropdownMenu
+                        style={{marginTop:'10px'}}
                         selectedValue={formData.Category}
                         onSelect={(value) => handleChange({ target: { name: 'Category', value } })}
                     />
                 </div>
-                <div className="input-group" style={{ width: '100%', marginBottom: '4px' }}>
+
+                <div className="input-group1" style={{ width: '100%', marginBottom: '4px' }}>
                     <input
                         type="text"
                         name="price"
@@ -136,10 +157,11 @@ const NewCard = (props) => {
                         style={{ width: '100%', marginBottom: '4px' }}
                     />
                 </div>
+
                 <div className="d-grid gap-2 col-6 mx-auto">
                     <button
-                        className="btn btn-outline-success"
-                        style={{ marginTop: '3px' }}
+                        className="btn btn-primary"
+                        style={{ marginTop: '5px' }}
                         onClick={handleDetailsUpdate}
                     >
                         Create
@@ -150,10 +172,9 @@ const NewCard = (props) => {
     );
 };
 
-// Separate Dropdown component
 const DropdownMenu = ({ selectedValue, onSelect }) => {
     return (
-        <div className="dropdown">
+        <div >
             <button
                 className="btn btn-secondary dropdown-toggle"
                 type="button"
@@ -161,9 +182,9 @@ const DropdownMenu = ({ selectedValue, onSelect }) => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-                Dropdown button
+                {selectedValue ? selectedValue : 'Dropdown button'}
             </button>
-            <ul className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
+            <ul style={{ overflow: 'hidden', }} className="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">
                 <li>
                     <p
                         className={`dropdown-item ${selectedValue === 'Advance' ? 'active' : ''}`}

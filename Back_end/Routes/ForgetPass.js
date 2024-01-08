@@ -28,13 +28,13 @@ router.post('/ForgetPass', async (req, res) => {
     try {
         await saveResetTokenToDB(email, resetToken);
 
-        const resetLink = `https://smart-zi-tech.vercel.app/reset/${resetToken}`;
+        const resetLink = `http://192.168.56.1:3000/reset/${resetToken}`;
 
         const msg = {
             to: email,
-            from: { email: A_email }, 
+            from: { email: A_email }, // Include the "email" property in the "from" field
             subject: 'Password Reset',
-            text: `If you have not requested it, please ignore it. Otherwise, go to this link; it should take you to the password reset page. Click on the following link to reset your password: ${resetLink}`,
+            text: `Hii this is Smart tech Team. You receive this email because you requested us to reset your password. If you have not requested it, please ignore it. Otherwise, go to this link; it should take you to the password reset page. Click on the following link to reset your password: ${resetLink}`,
             html: `<b>Hii this is Smart tech Team. You receive this email because you requested us to reset your password. If you have not requested it, please ignore it. Otherwise, go to this link; it should take you to the password reset page. Click on the following link to reset your password:</b><a href="${resetLink}">${resetLink}</a>`
         };
 
@@ -51,7 +51,7 @@ router.post('/ForgetPass', async (req, res) => {
 router.post('/reset-password', async (req, res) => {
     const { email, password, token } = req.body;
     try {
-        let usr = await ResetToken.findOneAndRemove({ email, token });
+        let usr = await ResetToken.findOne({ email, token });
         if (!usr) {
             return res.status(400).json({ errors: "No record found Email Id" });
         }

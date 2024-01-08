@@ -3,7 +3,7 @@ import './about.css';
 const AboutUs = () => {
   return (
     <div className='about-full' >
-      <div className="about-container" style={{color:'white', boxShadow: '2px 2px 5px rgba(0, 0, 0, 0.8)', borderRadius:'40px'}}>
+      <div className="about-container" style={{color:'white',}}>
         <h1 className="about-title">About Us</h1>
 
         <div className="about-content">
@@ -25,7 +25,7 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div className='cards1' style={{ paddingLeft: '7%', color: 'black', backgroundColor: 'black',  }}>
+      <div className='cards1'>
         <div class="container" >
           <div class="wrapper">
             <div class="banner-image">
@@ -40,7 +40,7 @@ const AboutUs = () => {
         <div class="container" >
           <div class="wrapper">
             <div class="banner-image">
-              <img src='https://res.cloudinary.com/serenaproject/image/upload/v1702655442/supra_q8jteq.jpg' alt='' />
+              <img src='https://res.cloudinary.com/serenaproject/image/upload/v1704127166/PXL_20231212_045524917.PORTRAIT_asn7qd.jpg' alt='' />
             </div>
             <h1>Syed Muneeb</h1>
             <p>name123@gmail.com <br />
@@ -48,7 +48,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div class="container" >
+        {/* <div class="container" >
           <div class="wrapper">
             <div class="banner-image">
               <img src='https://res.cloudinary.com/serenaproject/image/upload/v1702655442/supra_q8jteq.jpg' alt='' />
@@ -57,7 +57,7 @@ const AboutUs = () => {
             <p>name123@gmail.com <br />
               FA21-BSCYS-2130-0000</p>
           </div>
-        </div>
+        </div> */}
 
         <div class="container" >
           <div class="wrapper">
@@ -84,7 +84,7 @@ const AboutUs = () => {
         <div class="container" >
           <div class="wrapper">
             <div class="banner-image">
-              <img src='https://res.cloudinary.com/serenaproject/image/upload/v1702655442/supra_q8jteq.jpg' alt='' />
+              <img src='https://res.cloudinary.com/serenaproject/image/upload/v1704130296/75d2dfe5-34b7-40b4-959a-75779051a85a_lqpnle.jpg' alt='' />
             </div>
             <h1>Areeba Zafar</h1>
             <p>name123@gmail.com <br />
@@ -106,7 +106,7 @@ const AboutUs = () => {
         <div class="container" >
           <div class="wrapper">
             <div class="banner-image">
-              <img src='https://res.cloudinary.com/serenaproject/image/upload/v1702655442/supra_q8jteq.jpg' alt='' />
+              <img src='https://res.cloudinary.com/serenaproject/image/upload/v1704133322/3b4f31b4-fc1d-43dd-8063-e7d197de2828_dlbxfo.jpg' alt='' />
             </div>
             <h1>Muhammad Zubair</h1>
             <p>name123@gmail.com <br />

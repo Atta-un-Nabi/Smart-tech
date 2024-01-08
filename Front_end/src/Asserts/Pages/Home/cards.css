@@ -1,0 +1,343 @@
+.AdminCard {
+    display: inline-block;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+    align-self: center;
+}
+
+.AdminCardInputGroup .CardSpan {
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.AdminCardImg {
+    border: 2px solid #032F40;
+    border-radius: 10px;
+    transition: 0.3s;
+    justify-content: center;
+    width: 100%;
+}
+
+.AdminCardImg:hover {
+    border: 2px solid #0dcaf0;
+    border-radius: 12px;
+    transform: scale(1.04);
+    filter: drop-shadow(2px 5px 6px);
+}
+
+.adminCardBody {
+    padding: 0rem 0rem;
+    margin: 0rem 0rem;
+    width: 100%;
+    background-color: transparent;
+}
+
+.AdminCardButton {
+    width: 120px;
+    /* border: 1px solid red; */
+    align-content: space-around;
+}
+
+.AdminCardInputGroup .form-control{
+    width: 90%;
+    border: none;
+}
+
+@media (max-width: 1441px) {
+    .AdminCard {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        border: none;
+        align-self: center;
+    }
+
+    .AdminCardInputGroup .CardSpan {
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+
+    .AdminCardImg {
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+        justify-content: center;
+        width: 90%;
+        margin-left: 5%;
+    }
+
+    .AdminCardImg:hover {
+        border: 2px solid #0dcaf0;
+        border-radius: 12px;
+        transform: scale(1.04);
+        filter: drop-shadow(2px 5px 6px);
+    }
+
+    .adminCardBody {
+        padding: 0rem 0rem;
+        margin: 0rem 0rem;
+        width: 100%;
+        background-color: transparent;
+    }
+
+    .AdminCardButton {
+        width: 122px;
+        align-content: space-around;
+    }
+}
+
+@media (max-width: 1025px) {
+
+    .AdminCard {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        border: none;
+        align-self: center;
+        /* padding-left: -10%; */
+    }
+
+    .AdminCardInputGroup .CardSpan {
+        font-size: 1.4rem;
+        font-weight: 600;
+        /* border: 2px solid red; */
+    }
+
+    .AdminCardImg {
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+        justify-content: center;
+        width: 100%;
+        margin-left: -2%;
+    }
+
+    .AdminCardImg:hover {
+        border: 2px solid #0dcaf0;
+        border-radius: 12px;
+        transform: scale(1.04);
+        filter: drop-shadow(2px 5px 6px);
+    }
+
+    .adminCardBody {
+        padding: 0rem 0rem;
+        margin: 0rem 0rem;
+        width: 100%;
+        margin-left: -2%;
+        background-color: transparent;
+    }
+
+    .formControl {
+        width: 120%;
+    }
+    .AdminCardButton {
+        width: 96px;
+    }
+}
+
+@media (max-width: 769px) {
+    .AdminCard {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        border: none;
+        align-self: center;
+        padding-left: -10%;
+    }
+
+    .AdminCardInputGroup .CardSpan {
+        font-size: 1.4rem;
+        font-weight: 600;
+        /* border: 2px solid red; */
+    }
+
+    .AdminCardImg {
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+        justify-content: center;
+        width: 100%;
+        margin-left: -2%;
+    }
+
+    .AdminCardImg:hover {
+        border: 2px solid #0dcaf0;
+        border-radius: 12px;
+        transform: scale(1.04);
+        filter: drop-shadow(2px 5px 6px);
+    }
+
+    .adminCardBody {
+        padding: 0rem 0rem;
+        margin: 0rem 0rem;
+        width: 100%;
+        margin-left: -2%;
+        background-color: transparent;
+    }
+
+    .form-control {
+        width: 66%;
+    }
+    .AdminCardButton {
+        width: 136px;
+        align-content: space-around;
+    }
+}
+
+@media (max-width: 426px) {
+    .AdminCard {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        border: none;
+        align-self: center;
+        padding-left: -10%;
+    }
+
+    .AdminCardInputGroup .CardSpan {
+        font-size: 1.4rem;
+        font-weight: 600;
+        /* border: 2px solid red; */
+    }
+
+    .AdminCardImg {
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+        justify-content: center;
+        width: 100%;
+        margin-left: -2%;
+    }
+
+    .AdminCardImg:hover {
+        border: 2px solid #0dcaf0;
+        border-radius: 12px;
+        transform: scale(1.04);
+        filter: drop-shadow(2px 5px 6px);
+    }
+
+    .adminCardBody {
+        padding: 0rem 0rem;
+        margin: 0rem 0rem;
+        width: 100%;
+        margin-left: -2%;
+        background-color: transparent;
+    }
+
+    .form-control {
+        width: 100%;
+    }
+    .AdminCardButton {
+        width: 80px;
+        align-content: space-around;
+    }
+}
+
+@media (max-width: 376px) {
+    
+    .AdminCard {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        border: none;
+        align-self: center;
+        padding-left: -10%;
+    }
+
+    .AdminCardInputGroup .CardSpan {
+        font-size: 1.4rem;
+        font-weight: 600;
+        /* border: 2px solid red; */
+    }
+
+    .AdminCardImg {
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+        justify-content: center;
+        width: 100%;
+        margin-left: -2%;
+    }
+
+    .AdminCardImg:hover {
+        border: 2px solid #0dcaf0;
+        border-radius: 12px;
+        transform: scale(1.04);
+        filter: drop-shadow(2px 5px 6px);
+    }
+
+    .adminCardBody {
+        padding: 0rem 0rem;
+        margin: 0rem 0rem;
+        width: 100%;
+        margin-left: -2%;
+        background-color: transparent;
+    }
+
+    .form-control {
+        width: 66%;
+    }
+    .AdminCardButton {
+        width: 70px;
+        align-content: space-around;
+    }
+}
+
+@media (max-width: 321px) {
+    
+    .AdminCard {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        background-color: transparent;
+        border: none;
+        align-self: center;
+        padding-left: -10%;
+    }
+
+    .AdminCardInputGroup .CardSpan {
+        font-size: 1.4rem;
+        font-weight: 600;
+        /* border: 2px solid red; */
+    }
+
+    .AdminCardImg {
+        border: 2px solid #032F40;
+        border-radius: 10px;
+        transition: 0.3s;
+        justify-content: center;
+        width: 100%;
+        margin-left: -2%;
+    }
+
+    .AdminCardImg:hover {
+        border: 2px solid #0dcaf0;
+        border-radius: 12px;
+        transform: scale(1.04);
+        filter: drop-shadow(2px 5px 6px);
+    }
+
+    .adminCardBody {
+        padding: 0rem 0rem;
+        margin: 0rem 0rem;
+        width: 100%;
+        margin-left: -2%;
+        background-color: transparent;
+    }
+
+    .form-control {
+        width: 66%;
+    }
+    .AdminCardButton {
+        width: 60px;
+        font-size: 11px;
+        align-content: space-around;
+    }
+}

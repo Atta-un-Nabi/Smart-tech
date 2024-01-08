@@ -1,8 +1,13 @@
+.Login_full{
+  width: 100%;
+  overflow: hidden;
+}
+
 .login-box {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
+  width: 30%;
   padding: 40px;
   transform: translate(-50%, -50%);
   background: rgba(0, 0, 0, .5);
@@ -10,6 +15,21 @@
   box-shadow: 0 15px 25px rgba(48, 32, 1, 0.856);
   border-radius: 20px;
   backdrop-filter: blur(10px);
+}
+
+.back-button{
+  width: 55px;
+  background-color: transparent;
+  border: none;
+  color: #3fd9e1;
+  border-left: 2px solid #3fd9e1;
+  border-radius: 100%;
+}
+
+.back-button:hover{
+  /* color: #f6f6f6; */
+  border: 1px solid #3fd9e1;
+  border-radius: 3px;
 }
 
 .login-box h2 {
@@ -54,39 +74,55 @@
   font-size: 12px;
 }
 
-.login-box form a , 
-.login-box form button {
+.login-box form .formbutton {
   position: relative;
   padding: 10px 10px;
   background-color: transparent;
-  color: rgb(63, 217, 225);
+  color: #3fd9e1;
   font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
   transition: .5s;
-  margin-top: 20px;
   letter-spacing: 3px;
-  border-radius: 10px;
   border: 0px solid;
 }
 
-.login-box a:hover,
-.login-box button:hover {
+.login-box form Link:hover,
+.login-box .formbutton:hover {
   background: rgb(63, 217, 225);
-  color: rgb(81, 73, 206);
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgb((63, 217, 225), rgb(63, 217, 225) 0 0 25px rgb(63, 217, 225),
+  color: black;
+    border-radius: 10px;
+    box-shadow: 0 5px 5px rgb((63, 217, 225),
+        rgb(63, 217, 225) 0 0 25px rgb(63, 217, 225),
       0 0 50px rgb(63, 217, 225),
       0 0 100px rgb(63, 217, 225));
 }
 
-.login-box a span {
+.login-box .fpbutton {
+  display: flex;
+  height: auto;
+  margin-top: 5%;
+  margin-left: 72%;
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+  justify-content: flex-end;
+}
+
+.login-box .fpbutton:hover {
+  color: #3fd9e1;
+  transform: scale(1.05);
+  border: 1px solid #3fd9e1;
+  border-radius: 6px;
+
+}
+.login-box  span {
   position: absolute;
   display: block;
 }
 
-.login-box a span:nth-child(1) {
+.login-box  span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -99,14 +135,13 @@
   0% {
     left: -100%;
   }
-
   50%,
-  100% {
+    100% {
     left: 100%;
   }
 }
 
-.login-box a span:nth-child(2) {
+.login-box  span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -120,14 +155,13 @@
   0% {
     top: -100%;
   }
-
   50%,
-  100% {
+    100% {
     top: 100%;
   }
 }
 
-.login-box a span:nth-child(3) {
+.login-box  span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -148,7 +182,7 @@
   }
 }
 
-.login-box a span:nth-child(4) {
+.login-box  span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;
@@ -162,9 +196,159 @@
   0% {
     bottom: -100%;
   }
-
   50%,
-  100% {
+    100% {
     bottom: 100%;
+  }
+}
+
+
+@media (max-width: 1441px) {
+  .login-box {
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    padding: 40px;
+  }
+  
+  .back-button{
+    width: 55px;
+  }
+  
+  .back-button:hover{
+    /* color: #f6f6f6; */
+    border-radius: 3px;
+  }
+  
+  .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+  }
+  
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    margin-bottom: 30px;
+  }
+  
+  .login-box .user-box label {
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+  
+  .login-box .user-box input:focus~label,
+  .login-box .user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    font-size: 12px;
+  }
+  
+  .login-box form .formbutton {
+    padding: 10px 10px;
+    font-size: 16px;
+    letter-spacing: 3px;
+  }
+
+  .login-box .fpbutton {
+    margin-top: 5%;
+    margin-left: 61%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 1025px) {
+  .login-box {
+    width: 50%;
+  }
+
+  .login-box .fpbutton {
+    margin-top: 5%;
+    margin-left: 69%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 769px) {
+  .Login_full{
+    height: 800px;
+    overflow: hidden;
+  }
+
+.login-box{
+  top: 45%;
+}
+
+  .login-box .fpbutton {
+    margin-top: 5%;
+    margin-left: 56%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 426px) {
+  .Login_full{
+    height: 530px;
+    overflow: hidden;
+  }
+
+.login-box{
+  top: 30%;
+  width: 90%;
+}
+
+  .login-box .fpbutton {
+    margin-top: 5%;
+    margin-left: 56%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 376px) {
+  .Login_full{
+    height: 530px;
+    overflow: hidden;
+  }
+
+.login-box{
+  top: 30%;
+  width: 95%;
+}
+
+  .login-box .fpbutton {
+    margin-top: 5%;
+    margin-left: 52%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 321px) {
+  .Login_full{
+    height: 530px;
+    overflow: hidden;
+  }
+
+.login-box{
+  top: 30%;
+  width: 95%;
+}
+
+  .login-box .fpbutton {
+    margin-top: 5%;
+    margin-left: 54%;
+    justify-content: flex-end;
+    font-size: 12px;
+  }
+  .login-box form .formbutton {
+    padding: 8px 10px;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    letter-spacing: 3px;
+    border: 0px solid;
   }
 }
